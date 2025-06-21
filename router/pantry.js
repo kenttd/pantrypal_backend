@@ -38,7 +38,7 @@ pantryRouter.get("/", async (req, res) => {
           barcode: item.barcode,
           expired_at: item.expired_at,
           data: JSON.parse(item.data),
-          created_at: item.created_at,
+          created_at: item.added_at,
         };
       }),
     });
