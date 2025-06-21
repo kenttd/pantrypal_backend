@@ -3,7 +3,7 @@ import auth from "../middleware/auth.js";
 import knex from "../knex.js";
 const mealRouter = express.Router();
 
-// mealRouter.use(auth);
+mealRouter.use(auth);
 
 mealRouter.get("/random", async (req, res) => {
   try {

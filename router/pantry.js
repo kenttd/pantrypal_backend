@@ -32,7 +32,15 @@ pantryRouter.get("/", async (req, res) => {
       .where({ user_id: req.user.id });
     res.status(200).json({
       error: false,
-      data: pantryItems,
+      data: pantryItems.map((item) => {
+        return {
+          id: item.id,
+          barcode: item.barcode,
+          expired_at: item.expired_at,
+          data: JSON.parse(item.data),
+          created_at: item.created_at,
+        };
+      }),
     });
   } catch (err) {
     res.status(500).json({
