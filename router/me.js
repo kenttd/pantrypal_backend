@@ -8,7 +8,7 @@ meRouter.use(auth);
 meRouter.get("/", async (req, res) => {
   try {
     const user = await knex("users")
-      .select("id", "username", "email", "dob", "isActivated")
+      .select("id", "username", "email", "dob", "is_activated")
       .where({ id: req.user.id })
       .first();
     if (!user) {
