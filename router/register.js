@@ -31,7 +31,7 @@ registerRouter.post("/", async (req, res) => {
     password,
     email,
     dob: new Date(dob),
-    isActivated: true,
+    is_activated: true,
   });
   res.json({
     error: false,
